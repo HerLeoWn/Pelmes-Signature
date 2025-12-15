@@ -32,19 +32,23 @@ export default function Hizmetlerimiz() {
   const rightText = theme === "dark" ? "#2c2c2c" : "#f5f0e6";
 
   return (
-    <section className="relative h-screen flex bg-[var(--background)]">
+    <section className="relative min-h-screen flex flex-col lg:flex-row bg-[var(--background)]">
       {/* Sol - CNC & Lazer */}
-      <div
-        className="relative w-1/2 h-full cursor-pointer overflow-hidden"
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative w-full lg:w-1/2 h-screen cursor-pointer overflow-hidden"
         onMouseMove={handleMouseMoveLeft}
         style={{ backgroundColor: leftBg }}
       >
         <Link href="/cnc-lazer" className="block h-full">
           <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/50" />
 
-          {/* Geliştirilmiş parallax – tek büyük gradient yuvarlak + 3D shadow */}
+          {/* Desktop parallax */}
           <motion.div
-            className="pointer-events-none absolute -inset-20 rounded-full blur-3xl shadow-2xl shadow-[#b68d40]/50"
+            className="pointer-events-none absolute -inset-20 rounded-full blur-3xl shadow-2xl shadow-[#b68d40]/50 hidden lg:block"
             style={{
               background: "linear-gradient(135deg, #b68d40, #f5f0e6)",
               opacity: 0.4,
@@ -52,64 +56,68 @@ export default function Hizmetlerimiz() {
             animate={{
               x: mousePosLeft.x - 350,
               y: mousePosLeft.y - 400,
-              rotate: (mousePosLeft.x / 800) * 10, // hafif 3D tilt
+              rotate: (mousePosLeft.x / 800) * 10,
             }}
             transition={{ type: "spring", damping: 25, stiffness: 120 }}
           />
 
-          <div className="relative h-full flex flex-col justify-end p-16" style={{ color: leftText }}>
-            <h3 className="text-5xl md:text-6xl font-playfair font-bold mb-8 opacity-90">
+          <div className="relative h-full flex flex-col justify-end p-8 sm:p-12 lg:p-16" style={{ color: leftText }}>
+            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-6 lg:mb-8 opacity-90">
               Ahşap & Lazer Hediyelikler
             </h3>
-            <p className="text-xl md:text-2xl leading-relaxed max-w-lg opacity-80">
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-lg opacity-80">
               Kişiye özel gravür, plaket, isimlik ve dekoratif ürünler.<br />
               Ev tipi CNC router ve lazer ile butik üretim.
             </p>
-            <span className="mt-8 text-2xl font-medium text-[#b68d40]">
+            <span className="mt-6 lg:mt-8 text-xl sm:text-2xl font-medium text-[#b68d40]">
               Keşfet →
             </span>
           </div>
         </Link>
-      </div>
+      </motion.div>
 
       {/* Sağ - Kıyafet Baskı */}
-      <div
-        className="relative w-1/2 h-full cursor-pointer overflow-hidden"
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative w-full lg:w-1/2 h-screen cursor-pointer overflow-hidden"
         onMouseMove={handleMouseMoveRight}
         style={{ backgroundColor: rightBg }}
       >
         <Link href="/kiyafet-baski" className="block h-full">
           <div className="absolute inset-0 bg-gradient-to-bl from-transparent to-black/50" />
 
-          {/* Geliştirilmiş parallax – tek büyük gradient yuvarlak + 3D shadow */}
+          {/* Desktop parallax */}
           <motion.div
-            className="pointer-events-none absolute -inset-20 rounded-full blur-3xl shadow-2xl shadow-[#b68d40]/50"
+            className="pointer-events-none absolute -inset-20 rounded-full blur-3xl shadow-2xl shadow-[#b68d40]/50 hidden lg:block"
             style={{
               background: "linear-gradient(135deg, #b68d40, #f5f0e6)",
               opacity: 0.4,
             }}
             animate={{
               x: mousePosRight.x - 350,
-              y: mousePosRight.y - 400,
-              rotate: (mousePosRight.x / 800) * 10, // hafif 3D tilt
+              y: mousePosRight.y - 0,
+              rotate: (mousePosRight.x / 800) * 10,
             }}
             transition={{ type: "spring", damping: 25, stiffness: 120 }}
           />
 
-          <div className="relative h-full flex flex-col justify-end p-16" style={{ color: rightText }}>
-            <h3 className="text-5xl md:text-6xl font-playfair font-bold mb-8 opacity-90">
+          <div className="relative h-full flex flex-col justify-end p-8 sm:p-12 lg:p-16" style={{ color: rightText }}>
+            <h3 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold mb-6 lg:mb-8 opacity-90">
               Kişiye Özel Kıyafet Baskıları
             </h3>
-            <p className="text-xl md:text-2xl leading-relaxed max-w-lg opacity-80">
+            <p className="text-lg sm:text-xl lg:text-2xl leading-relaxed max-w-lg opacity-80">
               Hoodie, tişört, sweatshirt üzerine özel baskılar.<br />
               Şirketlere, sevgililere veya sana özel tasarımlar (yakında).
             </p>
-            <span className="mt-8 text-2xl font-medium text-[#b68d40]">
+            <span className="mt-6 lg:mt-8 text-xl sm:text-2xl font-medium text-[#b68d40]">
               Yakında Keşfet →
             </span>
           </div>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }
