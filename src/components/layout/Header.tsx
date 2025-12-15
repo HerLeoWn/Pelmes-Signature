@@ -24,13 +24,24 @@ const itemVariants = {
   visible: (i: number) => ({
     y: 0,
     opacity: 1,
-    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: "easeOut" as const, // <-- buraya da ekle
+    },
   }),
 };
 
 const logoVariants = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut" as const, // <-- "as const" ekledik, tip hatası gider
+    },
+  },
 };
 
 export default function Header() {
