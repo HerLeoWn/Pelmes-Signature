@@ -11,9 +11,9 @@ export default function OnboardingStep3({ onComplete }: { onComplete: () => void
 
   const handleContinue = () => {
     if (wantRegister === "yes") {
-      router.push("/auth/register"); // Evet → direkt register sayfasına
+      router.push("/auth/register"); // Evet → register sayfasına
     } else {
-      onComplete(); // Hayır → direkt ürün sayfasına
+      onComplete(); // Hayır → ürün sayfasına
     }
   };
 

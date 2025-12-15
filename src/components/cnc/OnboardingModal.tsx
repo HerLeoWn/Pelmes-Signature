@@ -50,7 +50,7 @@ export default function OnboardingModal() {
         <AnimatePresence mode="wait">
           {currentStep === 1 && <OnboardingStep1 setStep={setCurrentStep} />}
           {currentStep === 2 && <OnboardingStep2 setStep={setCurrentStep} />}
-          {currentStep === 3 && <OnboardingStep3 setStep={setCurrentStep} onComplete={handleComplete} />}
+          {currentStep === 3 && <OnboardingStep3 onComplete={handleComplete} />}
         </AnimatePresence>
       </motion.div>
     </div>
