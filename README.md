@@ -1,2 +1,7 @@
-# Pelmes-Signature
-Pelmes Signature – Kişiye özel ahşap/lazer hediyelikler ve kıyafet baskı butik üretim platformu. Next.js + Tailwind + shadcn/ui ile geliştirilen premium e-ticaret sitesi.
+# Pelmes Signature ✨
+
+Kişiye özel butik hediyeler – ahşap & lazer gravür + kıyafet baskıları
+
+> Ev tipi üretimle kaliteli ve anlamlı hediyeler. Next.js • Tailwind • shadcn/ui
+
+![Preview](https://your-vercel-link.vercel.app/og-image.png) <!-- ileride OG image ekleriz -->
