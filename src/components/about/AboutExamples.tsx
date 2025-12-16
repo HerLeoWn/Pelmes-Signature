@@ -18,7 +18,7 @@ export default function AboutExamples() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-playfair font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#b68d40] via-[#d4a65a] to-[#b68d40]"
+          className="text-4xl md:text-5xl font-playfair font-bold tracking-wider leading-tight text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#b68d40] via-[#d4a65a] to-[#b68d40]"
         >
           Çalışmalarımızdan
         </motion.h2>
