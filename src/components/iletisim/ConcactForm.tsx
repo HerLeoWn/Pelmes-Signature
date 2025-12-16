@@ -95,7 +95,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
           required
-          className="py-6 text-lg border-[var(--primary)]/30 focus:border-[var(--primary)] bg-[var(--card)] placeholder:text-[var(--muted)]/70"
+          className="py-2 text-lg border-[var(--primary)]/30 focus:border-[var(--primary)] bg-[var(--card)] placeholder:text-[var(--muted)]/70"
         />
 
         <Button type="submit" className="btn-primary w-full py-7 text-xl">
